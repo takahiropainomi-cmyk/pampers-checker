@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パンパース最安値チェッカー</title>
+<style>
+  :root {
+    --bg: #fdf9f4;
+    --card: #ffffff;
+    --ink: #33302b;
+    --sub: #7a7267;
+    --line: #e7ddd0;
+    --accent: #e8734a;
+    --accent-soft: #fdeee7;
+    --blue: #2f6fb2;
+    --blue-soft: #e8f1fa;
+    --warn-bg: #fff6e0;
+    --warn-ink: #8a6d1a;
+    --soldout: #c0392b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  header { text-align: center; padding: 12px 0 4px; }
+  header h1 { font-size: 1.55rem; margin: 0 0 6px; letter-spacing: .02em; }
+  header .auto { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: .82rem; padding: 2px 10px; border-radius: 999px; }
+  header .updated { color: var(--sub); font-size: .85rem; margin-top: 8px; }
+  h2.section { font-size: 1.05rem; margin: 28px 0 10px; border-left: 5px solid var(--accent); padding-left: 8px; }
+  .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .summary { grid-template-columns: 1fr; } }
+  .sum-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .sum-card .line-name { font-weight: 700; font-size: .9rem; }
+  .sum-card .per { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .sum-card .per small { font-size: .8rem; font-weight: 600; color: var(--ink); }
+  .sum-card .meta { font-size: .82rem; color: var(--sub); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .tabs button {
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    padding: 7px 14px; border-radius: 999px; font-size: .92rem; cursor: pointer; font-family: inherit;
+  }
+  .tabs button.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+  .tabs.variant button.active { background: var(--blue); border-color: var(--blue); }
+  .tab-label { font-size: .8rem; color: var(--sub); margin: 14px 0 2px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 12px 0; }
+  .card h3 { margin: 0 0 2px; font-size: 1.05rem; }
+  .card .label { color: var(--sub); font-size: .82rem; margin-bottom: 8px; }
+  .price-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .price-row .per { font-size: 1.9rem; font-weight: 800; color: var(--accent); }
+  .price-row .per small { font-size: .85rem; color: var(--ink); font-weight: 600; }
+  .badge { display: inline-block; font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+  .badge.soldout { background: #fbe9e7; color: var(--soldout); }
+  .badge.sale { background: var(--accent-soft); color: var(--accent); }
+  .sale-box { background: var(--accent-soft); border-radius: 10px; padding: 8px 12px; margin: 10px 0; font-size: .92rem; }
+  .sale-box .sale-per { font-weight: 800; color: var(--accent); font-size: 1.15rem; }
+  table.spec { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: .92rem; }
+  table.spec th, table.spec td { text-align: left; padding: 4px 8px 4px 0; vertical-align: top; }
+  table.spec th { color: var(--sub); font-weight: 600; white-space: nowrap; width: 5.5em; }
+  .cond { background: var(--warn-bg); color: var(--warn-ink); border-radius: 10px; padding: 8px 12px; margin: 10px 0; font-size: .88rem; }
+  .cond .cond-title { font-weight: 700; }
+  .note { font-size: .85rem; color: var(--sub); white-space: pre-wrap; }
+  .plink { display: inline-block; margin-top: 8px; color: var(--blue); font-weight: 700; text-decoration: none; }
+  .plink:hover { text-decoration: underline; }
+  .history { margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 8px; }
+  .history .h-title { font-size: .8rem; color: var(--sub); font-weight: 700; margin-bottom: 4px; }
+  .history ul { margin: 0; padding-left: 1.1em; font-size: .85rem; color: var(--sub); }
+  .status-box { text-align: center; color: var(--sub); padding: 18px 10px; }
+  .status-box .big { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .calc { background: var(--blue-soft); border-radius: 14px; padding: 16px; margin-top: 12px; }
+  .calc h3 { margin: 0 0 8px; font-size: 1rem; color: var(--blue); }
+  .calc label { font-size: .9rem; }
+  .calc input { width: 5em; font-size: 1rem; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; font-family: inherit; }
+  .calc .result { margin-top: 10px; font-size: .95rem; }
+  .calc .result .row { padding: 6px 0; border-top: 1px dashed #c4d8ee; }
+  .calc .result .row:first-child { border-top: none; }
+  footer { margin-top: 36px; font-size: .8rem; color: var(--sub); border-top: 1px solid var(--line); padding-top: 12px; white-space: pre-wrap; }
+  .loading, .error { text-align: center; color: var(--sub); padding: 40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>パンパース最安値チェッカー</h1>
+    <span class="auto">6時間ごとに自動更新</span>
+    <div class="updated" id="updatedAt">読み込み中…</div>
+  </header>
+
+  <main id="app">
+    <div class="loading">データを読み込んでいます…</div>
+  </main>
+
+  <footer id="footNotes"></footer>
+</div>
+
+<script>
+"use strict";
+
+var LINE_ORDER = ["sarasara", "hadaichi"];
+var LINE_NAMES = {
+  sarasara: "さらさらケア",
+  hadaichi: "はじめての肌へのいちばん"
+};
+var TYPES = [
+  { id: "tape", label: "テープ" },
+  { id: "pants", label: "パンツ" }
+];
+var SIZES = [
+  { id: "newborn", label: "新生児" },
+  { id: "s", label: "S" },
+  { id: "m", label: "M" },
+  { id: "l", label: "L" },
+  { id: "big", label: "ビッグ" },
+  { id: "bigger", label: "ビッグより大きい" }
+];
+var VARIANTS = [
+  { id: "haihai", label: "はいはい（5〜10kg）" },
+  { id: "tacchi", label: "たっち（6〜12kg）" }
+];
+
+var state = { type: "tape", size: "m", variant: "haihai" };
+var DATA = null;
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+function yen(n) { return Number(n).toLocaleString("ja-JP") + "円"; }
+function fmtPerSheet(x) {
+  if (x == null) return "-";
+  return String(Number(Number(x).toFixed(2)));
+}
+function comboKey(line, type, size, variant) {
+  var s = size;
+  if (type === "pants" && size === "m") s = "m_" + variant;
+  return line + "_" + type + "_" + s;
+}
+function getCombo(line, type, size, variant) {
+  if (!DATA || !DATA.lines) return null;
+  return DATA.lines[comboKey(line, type, size, variant)] || null;
+}
+function fmtUpdatedAt(iso) {
+  if (!iso) return "";
+  try {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    return new Intl.DateTimeFormat("ja-JP", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric", month: "long", day: "numeric",
+      hour: "2-digit", minute: "2-digit"
+    }).format(d);
+  } catch (e) {
+    return iso;
+  }
+}
+function shippingText(b) {
+  if (b.shipping == null) return "送料未確認";
+  if (b.shipping === 0) return "送料無料";
+  return "送料 " + yen(b.shipping);
+}
+function totalText(b) {
+  if (b.shipping == null) return yen(b.price_total) + "（＋送料）";
+  return yen(b.price_total + b.shipping) + "（送料込み）";
+}
+
+function summaryHTML() {
+  var html = '<h2 class="section">いまの結論（テープM）</h2><div class="summary">';
+  LINE_ORDER.forEach(function (line) {
+    var c = getCombo(line, "tape", "m", "haihai");
+    html += '<div class="sum-card"><div class="line-name">' + esc(LINE_NAMES[line]) + " テープM</div>";
+    if (c && c.status === "confirmed" && c.best) {
+      var b = c.best;
+      if (b.per_sheet_sale != null) {
+        html += '<div class="per">' + fmtPerSheet(b.per_sheet_sale) + "<small> 円/枚（セール時）</small></div>";
+        html += '<div class="meta">通常 ' + fmtPerSheet(b.per_sheet) + "円/枚 ・ " + esc(b.store) + "</div>";
+      } else {
+        html += '<div class="per">' + fmtPerSheet(b.per_sheet) + "<small> 円/枚</small></div>";
+        html += '<div class="meta">' + esc(b.store) + " ／ " + totalText(b) + " ・ " + b.sheets + "枚</div>";
+      }
+      if (b.stock === "out_of_stock") html += '<div><span class="badge soldout">売り切れ</span></div>';
+    } else {
+      html += '<div class="meta">現在確認中です</div>';
+    }
+    html += "</div>";
+  });
+  html += "</div>";
+  return html;
+}
+
+function tabsHTML() {
+  var html = "";
+  html += '<div class="tab-label">タイプ</div><div class="tabs" id="typeTabs">';
+  TYPES.forEach(function (t) {
+    html += '<button data-type="' + t.id + '"' + (state.type === t.id ? ' class="active"' : "") + ">" + esc(t.label) + "</button>";
+  });
+  html += "</div>";
+  html += '<div class="tab-label">サイズ</div><div class="tabs" id="sizeTabs">';
+  SIZES.forEach(function (s) {
+    html += '<button data-size="' + s.id + '"' + (state.size === s.id ? ' class="active"' : "") + ">" + esc(s.label) + "</button>";
+  });
+  html += "</div>";
+  if (state.type === "pants" && state.size === "m") {
+    html += '<div class="tab-label">Mの種類</div><div class="tabs variant" id="variantTabs">';
+    VARIANTS.forEach(function (v) {
+      html += '<button data-variant="' + v.id + '"' + (state.variant === v.id ? ' class="active"' : "") + ">" + esc(v.label) + "</button>";
+    });
+    html += "</div>";
+  }
+  return html;
+}
+
+function comboCardHTML(line) {
+  var c = getCombo(line, state.type, state.size, state.variant);
+  var html = '<div class="card"><h3>' + esc(LINE_NAMES[line]) + "</h3>";
+  if (!c) {
+    html += '<div class="status-box"><div class="big">この組み合わせの商品はありません</div></div></div>';
+    return html;
+  }
+  html += '<div class="label">' + esc(c.label || "") + "</div>";
+  if (c.status === "not_exist") {
+    html += '<div class="status-box"><div class="big">この組み合わせの商品はありません</div>';
+    if (c.note) html += '<div class="note">' + esc(c.note) + "</div>";
+    html += "</div></div>";
+    return html;
+  }
+  if (c.status === "unconfirmed" || !c.best) {
+    html += '<div class="status-box"><div class="big">未確認</div><div>この組み合わせは、まだ価格を確認できていません。</div>';
+    if (c.note) html += '<div class="note">' + esc(c.note) + "</div>";
+    html += "</div></div>";
+    return html;
+  }
+  var b = c.best;
+  html += '<div class="price-row"><span class="per">' + fmtPerSheet(b.per_sheet) + "<small> 円/枚</small></span>";
+  if (b.stock === "out_of_stock") html += '<span class="badge soldout">売り切れ</span>';
+  if (b.per_sheet_sale != null) html += '<span class="badge sale">セール中</span>';
+  html += "</div>";
+  if (b.per_sheet_sale != null) {
+    html += '<div class="sale-box">セール価格：<span class="sale-per">' + fmtPerSheet(b.per_sheet_sale) + "円/枚</span>";
+    if (b.sale_price_total != null) html += "（セール総額 " + yen(b.sale_price_total) + "）";
+    html += "</div>";
+  }
+  html += '<table class="spec">';
+  html += "<tr><th>店名</th><td>" + esc(b.store) + "</td></tr>";
+  html += "<tr><th>総額</th><td>" + totalText(b) + "</td></tr>";
+  html += "<tr><th>商品価格</th><td>" + yen(b.price_total) + "</td></tr>";
+  html += "<tr><th>枚数</th><td>" + b.sheets + "枚</td></tr>";
+  html += "<tr><th>送料</th><td>" + shippingText(b) + "</td></tr>";
+  html += "</table>";
+  if (b.conditional) {
+    html += '<div class="cond"><span class="cond-title">条件付き：</span>' + esc(b.conditional) + "</div>";
+  }
+  if (b.note) html += '<div class="note">' + esc(b.note) + "</div>";
+  if (b.url) html += '<a class="plink" href="' + esc(b.url) + '" target="_blank" rel="noopener">商品ページを見る →</a>';
+  if (c.history && c.history.length) {
+    html += '<div class="history"><div class="h-title">最安値の推移</div><ul>';
+    c.history.slice().reverse().forEach(function (h) {
+      var line1 = esc(h.date) + "：" + esc(h.store) + " " + fmtPerSheet(h.best_per_sheet) + "円/枚";
+      if (h.best_per_sheet_sale != null) line1 += "（セール時 " + fmtPerSheet(h.best_per_sheet_sale) + "円/枚）";
+      if (h.stock === "out_of_stock") line1 += "（売り切れ）";
+      html += "<li>" + line1 + "</li>";
+    });
+    html += "</ul></div>";
+  }
+  html += "</div>";
+  return html;
+}
+
+function calcHTML() {
+  var html = '<div class="calc"><h3>何日もつ？ 計算ツール</h3>';
+  html += '<label>1日の使用枚数 <input type="number" id="perDay" min="1" max="30" step="1" value="6"> 枚</label>';
+  html += '<div class="result" id="calcResult"></div></div>';
+  return html;
+}
+
+function updateCalc() {
+  var input = document.getElementById("perDay");
+  var box = document.getElementById("calcResult");
+  if (!input || !box) return;
+  var perDay = parseFloat(input.value);
+  var html = "";
+  if (!perDay || perDay <= 0) {
+    box.innerHTML = '<div class="row">1日の使用枚数を入力してください。</div>';
+    return;
+  }
+  LINE_ORDER.forEach(function (line) {
+    var c = getCombo(line, state.type, state.size, state.variant);
+    html += '<div class="row"><strong>' + esc(LINE_NAMES[line]) + "</strong>：";
+    if (c && c.status === "confirmed" && c.best) {
+      var b = c.best;
+      var days = b.sheets / perDay;
+      var monthly = b.per_sheet * perDay * 30;
+      html += "最安パック（" + b.sheets + "枚）で約 <strong>" + days.toFixed(1) + "日分</strong>";
+      html += " ／ 1か月の目安コスト 約 <strong>" + yen(Math.round(monthly)) + "</strong>";
+      if (b.per_sheet_sale != null) {
+        var monthlySale = b.per_sheet_sale * perDay * 30;
+        html += "（セール時は約 " + yen(Math.round(monthlySale)) + "）";
+      }
+      if (b.stock === "out_of_stock") html += " ※現在売り切れ";
+    } else {
+      html += "価格未確認のため計算できません";
+    }
+    html += "</div>";
+  });
+  box.innerHTML = html;
+}
+
+function render() {
+  var app = document.getElementById("app");
+  var html = summaryHTML();
+  html += '<h2 class="section">種類・サイズ別 最安値</h2>';
+  html += tabsHTML();
+  LINE_ORDER.forEach(function (line) { html += comboCardHTML(line); });
+  html += calcHTML();
+  app.innerHTML = html;
+
+  document.querySelectorAll("#typeTabs button").forEach(function (btn) {
+    btn.addEventListener("click", function () { state.type = btn.getAttribute("data-type"); render(); });
+  });
+  document.querySelectorAll("#sizeTabs button").forEach(function (btn) {
+    btn.addEventListener("click", function () { state.size = btn.getAttribute("data-size"); render(); });
+  });
+  document.querySelectorAll("#variantTabs button").forEach(function (btn) {
+    btn.addEventListener("click", function () { state.variant = btn.getAttribute("data-variant"); render(); });
+  });
+  var input = document.getElementById("perDay");
+  if (input) input.addEventListener("input", updateCalc);
+  updateCalc();
+}
+
+fetch("./data.json", { cache: "no-store" })
+  .then(function (res) {
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  })
+  .then(function (data) {
+    DATA = data;
+    var ua = document.getElementById("updatedAt");
+    if (ua) ua.textContent = data.updated_at ? "最終確認：" + fmtUpdatedAt(data.updated_at) : "";
+    var foot = document.getElementById("footNotes");
+    if (foot && data.notes) foot.textContent = data.notes;
+    render();
+  })
+  .catch(function (err) {
+    var app = document.getElementById("app");
+    if (app) app.innerHTML = '<div class="error">データを読み込めませんでした（' + esc(err.message) + "）。時間をおいて再読み込みしてください。</div>";
+  });
+</script>
+</body>
+</html>
