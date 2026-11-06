@@ -1,0 +1,415 @@
+{
+ "artifact_slug": "panpasuzui-an-zhi-tietuka",
+ "lines": {
+  "hadaichi_pants_big": {
+   "best": {
+    "note": "LOHACO。送料無料（3,780円以上で基本配送料無料）。在庫あり",
+    "per_sheet": 49.0,
+    "price_total": 6180,
+    "sheets": 126,
+    "shipping": 0,
+    "store": "LOHACO",
+    "url": "https://lohaco.yahoo.co.jp/store/h-lohaco/item/ek09986/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 49.0,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    },
+    {
+     "best_per_sheet": 49.0,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん パンツ ビッグ（12〜22kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_pants_bigger": {
+   "history": [],
+   "label": "パンパース はじめての肌へのいちばん パンツ ビッグより大きい",
+   "note": "存在しない。「ビッグより大きい」はさらさらケア／おやすみパンツのみの展開。",
+   "status": "not_exist"
+  },
+  "hadaichi_pants_l": {
+   "best": {
+    "note": "LOHACO。送料無料。在庫あり。価格は開いたLOHACO商品ページ内の関連商品表示で確認（該当サイズの個別ページは直接開けず）。次点：ぱーそなるたのめーる Yahoo!店 6,283円＝47.6円/枚（ページ直接確認済み）",
+    "per_sheet": 46.8,
+    "price_total": 6180,
+    "sheets": 132,
+    "shipping": 0,
+    "store": "LOHACO",
+    "url": "https://lohaco.yahoo.co.jp/store/h-lohaco/item/ek09986/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 46.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    },
+    {
+     "best_per_sheet": 46.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん パンツL（9〜14kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_pants_m_haihai": {
+   "best": {
+    "note": "LOHACO。送料無料。在庫あり。6,180円/168枚＝36.8円/枚。次点：ぱーそなるたのめーる Yahoo!店 6,283円＝37.4円/枚（ページ直接確認済み）",
+    "per_sheet": 36.8,
+    "price_total": 6180,
+    "sheets": 168,
+    "shipping": 0,
+    "store": "LOHACO",
+    "url": "https://lohaco.yahoo.co.jp/store/h-lohaco/item/ek09968/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 36.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    },
+    {
+     "best_per_sheet": 36.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん パンツM はいはい（5〜10kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_pants_m_tacchi": {
+   "best": {
+    "note": "LOHACO。送料無料。たっちは関連商品表示での確認（個別ページは直接開けず）。6,180円/168枚＝36.8円/枚。次点：ぱーそなるたのめーる Yahoo!店 6,283円＝37.4円/枚（ページ直接確認済み）",
+    "per_sheet": 36.8,
+    "price_total": 6180,
+    "sheets": 168,
+    "shipping": 0,
+    "store": "LOHACO",
+    "url": "https://lohaco.yahoo.co.jp/store/h-lohaco/item/ek09968/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 36.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    },
+    {
+     "best_per_sheet": 36.8,
+     "date": "2026-11-06",
+     "store": "LOHACO"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん パンツM たっち（6〜12kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_pants_s": {
+   "history": [],
+   "label": "パンパース はじめての肌へのいちばん パンツS",
+   "note": "存在しない。現行パンツはMはいはい・Mたっちから。",
+   "status": "not_exist"
+  },
+  "hadaichi_tape_big": {
+   "history": [],
+   "label": "パンパース はじめての肌へのいちばん テープ ビッグ",
+   "note": "存在しない。テープのサイズ展開は新生児・S・M・Lのみ。",
+   "status": "not_exist"
+  },
+  "hadaichi_tape_l": {
+   "best": {
+    "note": "ひかりTVショッピング 楽天市場店。6,180円/138枚＝44.8円/枚。神奈川県宛て送料無料を確認。2026-11-06 15:15時点で売り切れ（3パック・6パックとも再入荷表示）。S・Mも売り切れ表示。",
+    "per_sheet": 44.8,
+    "price_total": 6180,
+    "sheets": 138,
+    "shipping": 0,
+    "stock": "out_of_stock",
+    "store": "ひかりTVショッピング 楽天市場店",
+    "url": "https://item.rakuten.co.jp/hikaritv/1710000043/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 44.8,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング 楽天市場店"
+    },
+    {
+     "best_per_sheet": 44.8,
+     "date": "2026-11-06",
+     "stock": "out_of_stock",
+     "store": "ひかりTVショッピング 楽天市場店"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん テープL（9〜14kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_tape_m": {
+   "best": {
+    "note": "セール価格5,180円は2026/11/8まで。2026-11-06 15:12時点の商品ページで5,180円・在庫ありを確認。購入にはコストコ会員登録が必要。候補：ひかりTVショッピング 楽天市場店 6,180円/174枚＝35.5円/枚（商品代金のみ、送料未確認、価格はクロール由来で要再確認）",
+    "per_sheet": 35.6,
+    "per_sheet_sale": 30.83,
+    "price_total": 5980,
+    "sale_price_total": 5180,
+    "sheets": 168,
+    "shipping": 0,
+    "store": "コストコオンライン",
+    "url": "https://www.costco.co.jp/c/Pampers-Tape-M-Hadaichi-611kg-56P-x-3/p/79835"
+   },
+   "history": [
+    {
+     "best_per_sheet": 35.6,
+     "best_per_sheet_sale": 30.83,
+     "date": "2026-11-06",
+     "store": "コストコオンライン"
+    },
+    {
+     "best_per_sheet": 35.6,
+     "best_per_sheet_sale": 30.83,
+     "date": "2026-11-06",
+     "store": "コストコオンライン"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん テープM（6〜11kg）",
+   "status": "confirmed"
+  },
+  "hadaichi_tape_newborn": {
+   "best": {
+    "note": "Yahoo!ショッピング最安ストア（店名は取得テキストに表示されず）。商品代金のみの1枚あたり価格。送料（神奈川宛て）未確認。次点：楽天ビック 6,430円/216枚＝29.77円/枚（送料未確認）",
+    "per_sheet": 28.6,
+    "price_total": 6177,
+    "sheets": 216,
+    "shipping": null,
+    "store": "Yahoo!ショッピング最安ストア",
+    "url": "https://shopping.yahoo.co.jp/products/c1f27104ab"
+   },
+   "history": [
+    {
+     "best_per_sheet": 28.6,
+     "date": "2026-11-06",
+     "store": "Yahoo!ショッピング最安ストア"
+    },
+    {
+     "best_per_sheet": 28.6,
+     "date": "2026-11-06",
+     "store": "Yahoo!ショッピング最安ストア"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん テープ 新生児（5kgまで）",
+   "status": "confirmed"
+  },
+  "hadaichi_tape_s": {
+   "best": {
+    "note": "Yahoo!ショッピング最安ストア（店名は取得テキストに表示されず）。商品代金のみの1枚あたり価格。送料（神奈川宛て）未確認。次点：楽天ビック 6,430円/198枚＝32.47円/枚（送料未確認）",
+    "per_sheet": 31.2,
+    "price_total": 6177,
+    "sheets": 198,
+    "shipping": null,
+    "store": "Yahoo!ショッピング最安ストア",
+    "url": "https://shopping.yahoo.co.jp/products/a9211eb138"
+   },
+   "history": [
+    {
+     "best_per_sheet": 31.2,
+     "date": "2026-11-06",
+     "store": "Yahoo!ショッピング最安ストア"
+    },
+    {
+     "best_per_sheet": 31.2,
+     "date": "2026-11-06",
+     "store": "Yahoo!ショッピング最安ストア"
+    }
+   ],
+   "label": "パンパース はじめての肌へのいちばん テープS（4〜8kg）",
+   "status": "confirmed"
+  },
+  "sarasara_pants_big": {
+   "best": {
+    "note": "ひかりTVショッピング Yahoo!店。商品価格のみの1枚あたり価格。送料・在庫はページ上で確認できず。次点：LOHACO メガジャンボ192枚 8,640円・送料無料・在庫あり＝45.00円/枚",
+    "per_sheet": 40.95,
+    "price_total": 6880,
+    "sheets": 168,
+    "shipping": null,
+    "store": "ひかりTVショッピング Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/hikaritv/2010124149.html"
+   },
+   "history": [
+    {
+     "best_per_sheet": 40.95,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    },
+    {
+     "best_per_sheet": 40.95,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    }
+   ],
+   "label": "パンパース さらさらケア パンツ ビッグ（12〜22kg）",
+   "status": "confirmed"
+  },
+  "sarasara_pants_bigger": {
+   "best": null,
+   "history": [],
+   "label": "パンパース さらさらケア パンツ ビッグより大きい（15〜28kg）",
+   "note": "商品は存在するが未確認。参考値：Amazon 10,798円/128枚＝84.4円/枚（価格トラッカー経由の引用。Amazon商品ページ自体は403で開けず未検証） 2026-11-06 15:15の調査でも確認できず未確認のまま。",
+   "status": "unconfirmed"
+  },
+  "sarasara_pants_l": {
+   "best": {
+    "conditional": "PayPayポイント4%還元（292pt）あり（全額PayPay残高支払い＋LINE連携条件）",
+    "note": "ひかりTVショッピング Yahoo!店。送料無料（全国一律）。在庫あり。Amazonの古い取得コピー（2026-10-12）では8,280円/224枚＝37.0円/枚",
+    "per_sheet": 36.94,
+    "price_total": 7980,
+    "sheets": 216,
+    "shipping": 0,
+    "store": "ひかりTVショッピング Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/hikaritv/2010123527.html"
+   },
+   "history": [
+    {
+     "best_per_sheet": 36.94,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    },
+    {
+     "best_per_sheet": 36.94,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    }
+   ],
+   "label": "パンパース さらさらケア パンツL（9〜14kg）",
+   "status": "confirmed"
+  },
+  "sarasara_pants_m_haihai": {
+   "best": {
+    "note": "アカチャンホンポ Online Shop。パンツM はいはい 52枚×2。送料は通常600円＋紙おむつ個別330円＝930円。総額3,768円÷104枚＝36.2円/枚。在庫なし（2026-11-06 15:13時点で再確認。レッドフライデー第1弾のクラブパック、11/6 9:59で終了）。たっちは今回サンドラッグで初確認（32.5円/枚）。",
+    "per_sheet": 36.2,
+    "price_total": 2838,
+    "sheets": 104,
+    "shipping": 930,
+    "stock": "out_of_stock",
+    "store": "アカチャンホンポ Online Shop",
+    "url": "https://shop.akachan.jp/shop/g/g251011500/"
+   },
+   "history": [
+    {
+     "best_per_sheet": 36.2,
+     "date": "2026-11-06",
+     "store": "アカチャンホンポ Online Shop"
+    },
+    {
+     "best_per_sheet": 36.2,
+     "date": "2026-11-06",
+     "stock": "out_of_stock",
+     "store": "アカチャンホンポ Online Shop"
+    }
+   ],
+   "label": "パンパース さらさらケア パンツM はいはい（5〜10kg）",
+   "status": "confirmed"
+  },
+  "sarasara_pants_m_tacchi": {
+   "best": {
+    "note": "サンドラッグ。88枚×3パック 8,580円。在庫あり。送料（神奈川県宛て）はページ上で確認できず、商品代金のみの1枚あたり価格。",
+    "per_sheet": 32.5,
+    "price_total": 8580,
+    "sheets": 264,
+    "shipping": null,
+    "store": "サンドラッグ",
+    "url": "https://sundrug-online.com/en/products/4987176334725"
+   },
+   "history": [
+    {
+     "best_per_sheet": 32.5,
+     "date": "2026-11-06",
+     "store": "サンドラッグ"
+    }
+   ],
+   "label": "パンパース さらさらケア パンツM たっち（6〜12kg）",
+   "note": "サンドラッグ。88枚×3パック 8,580円。在庫あり。送料（神奈川県宛て）はページ上で確認できず、商品代金のみの1枚あたり価格。",
+   "status": "confirmed"
+  },
+  "sarasara_pants_s": {
+   "best": null,
+   "history": [],
+   "label": "パンパース さらさらケア パンツS",
+   "note": "未確認。現行ラインナップではパンツはMはいはい・MたっちからでSなしの見解が有力だが、旧SJ品「パンツ S 74枚」の掲載もあり存在有無の断定ができず。要再確認。 2026-11-06 15:15の調査でも確認できず未確認のまま。",
+   "status": "unconfirmed"
+  },
+  "sarasara_tape_big": {
+   "history": [],
+   "label": "パンパース さらさらケア テープ ビッグ",
+   "note": "存在しない。テープのサイズ展開は新生児・S・M・Lのみ。",
+   "status": "not_exist"
+  },
+  "sarasara_tape_l": {
+   "best": null,
+   "history": [],
+   "label": "パンパース さらさらケア テープL（9〜14kg）",
+   "note": "商品は存在するが、Yahoo!ショッピング・楽天市場・西松屋・アカチャンホンポ・ビックカメラ.com・Amazon・コストコいずれも今回の確認では価格を取得できず未確認。 2026-11-06 15:15の調査でも確認できず未確認のまま。",
+   "status": "unconfirmed"
+  },
+  "sarasara_tape_m": {
+   "best": {
+    "conditional": "初めてのアプリ購入50%OFFクーポン（上限500円・要ログイン）適用で26.13円/枚。PayPayポイント4%還元を加味した実質27.12円/枚",
+    "per_sheet": 28.15,
+    "price_total": 6980,
+    "sheets": 248,
+    "shipping": 0,
+    "store": "ひかりTVショッピング Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/hikaritv/2010123523.html"
+   },
+   "history": [
+    {
+     "best_per_sheet": 28.15,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    },
+    {
+     "best_per_sheet": 28.15,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    },
+    {
+     "best_per_sheet": 28.15,
+     "date": "2026-11-06",
+     "store": "ひかりTVショッピング Yahoo!店"
+    }
+   ],
+   "label": "パンパース さらさらケア テープM（6〜11kg）",
+   "status": "confirmed"
+  },
+  "sarasara_tape_newborn": {
+   "best": {
+    "note": "サンドラッグ。84枚×4パック 8,580円。在庫あり。送料（神奈川県宛て）はページ上で確認できず、商品代金のみの1枚あたり価格。",
+    "per_sheet": 25.54,
+    "price_total": 8580,
+    "sheets": 336,
+    "shipping": null,
+    "store": "サンドラッグ",
+    "url": "https://sundrug-online.com/en/products/4987176334978"
+   },
+   "history": [
+    {
+     "best_per_sheet": 25.54,
+     "date": "2026-11-06",
+     "store": "サンドラッグ"
+    }
+   ],
+   "label": "パンパース さらさらケア テープ 新生児（5kgまで）",
+   "note": "サンドラッグ。84枚×4パック 8,580円。在庫あり。送料（神奈川県宛て）はページ上で確認できず、商品代金のみの1枚あたり価格。",
+   "status": "confirmed"
+  },
+  "sarasara_tape_s": {
+   "best": null,
+   "history": [],
+   "label": "パンパース さらさらケア テープS（4〜8kg）",
+   "note": "商品は存在するが、Yahoo!ショッピング・楽天市場・西松屋・アカチャンホンポ・ビックカメラ.com・Amazon・コストコいずれも今回の確認では価格を取得できず未確認。 2026-11-06 15:15の調査でも確認できず未確認のまま。",
+   "status": "unconfirmed"
+  }
+ },
+ "notes": "送料は神奈川県宛て前提。サンドラッグの2件（さらさらケア テープ新生児・パンツM たっち）は商品ページを直接開いて初確認したが、送料はページ上で確認できず商品代金のみの1枚あたり価格。Amazon.co.jpは今回試せていない（前回は複数ページで403）。西松屋オンラインストア・ビックカメラ.comはJS描画中心で商品ページにテキスト取得では到達できず、当日価格はほぼ未確認。さらさらケア パンツSの存在有無は見解が分かれており未確認のまま。",
+ "updated_at": "2026-11-06T15:15:00+09:00"
+}
